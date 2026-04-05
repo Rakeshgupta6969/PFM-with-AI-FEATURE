@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
+import { ThemeContext } from '../context/ThemeContext';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { 
   LogOut, Home, ChartPie, CreditCard, Settings, Wallet, 
@@ -19,9 +20,10 @@ const Sidebar = ({ accounts = [], isAccountsOpen, setIsAccountsOpen, onDeleteAcc
   };
 
   const isActive = (path) => location.pathname === path;
+  const { theme } = useContext(ThemeContext);
 
   return (
-    <aside className="w-72 glass-card border-r border-white/5 hidden md:flex flex-col relative z-20 h-full">
+    <aside className="w-72 glass-card border-r border-[var(--border-primary)] hidden md:flex flex-col relative z-20 h-full transition-colors duration-300">
       <div className="h-20 flex items-center px-8 border-b border-white/5">
         <div className="bg-gradient-to-tr from-brand-600 to-brand-400 p-2 rounded-xl mr-3 shadow-[0_0_15px_rgba(37,99,235,0.4)]">
           <Wallet className="h-6 w-6 text-white" />

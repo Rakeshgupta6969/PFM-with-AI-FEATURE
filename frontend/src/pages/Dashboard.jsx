@@ -1,7 +1,8 @@
 import { useContext, useState, useEffect, useCallback } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { LogOut, Home, ChartPie, CreditCard, Settings, Wallet, TrendingUp, DollarSign, RefreshCw, ChartColumn, Plus, Trash2, ChevronDown, ChevronRight } from 'lucide-react';
+import { ThemeContext } from '../context/ThemeContext';
+import { LogOut, Home, ChartPie, CreditCard, Settings, Wallet, TrendingUp, DollarSign, RefreshCw, ChartColumn, Plus, Trash2, ChevronDown, ChevronRight, Sun, Moon } from 'lucide-react';
 import LinkBank from '../components/LinkBank';
 import SpendingPieChart from '../components/Charts/SpendingPieChart';
 import MonthlyBarChart from '../components/Charts/MonthlyBarChart';
@@ -12,6 +13,7 @@ import api from '../utils/api';
 
 const Dashboard = () => {
   const { user, logout } = useContext(AuthContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
   const navigate = useNavigate();
   
   const [accounts, setAccounts] = useState([]);
@@ -80,7 +82,7 @@ const Dashboard = () => {
   const monthlySpent = summaryData?.monthlySpent || 0;
 
   return (
-    <div className="min-h-screen bg-black text-gray-100 flex relative overflow-hidden">
+    <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] flex relative overflow-hidden transition-colors duration-300">
       {/* Background Gradients */}
       <div className="fixed top-0 left-0 w-[50%] h-[50%] rounded-full bg-brand-600/10 blur-[150px] pointer-events-none"></div>
       <div className="fixed bottom-0 right-0 w-[50%] h-[50%] rounded-full bg-purple-600/10 blur-[150px] pointer-events-none"></div>
@@ -96,8 +98,19 @@ const Dashboard = () => {
       {/* Main Content */}
       <main className="flex-1 flex flex-col relative z-20 h-screen overflow-hidden">
         <header className="h-20 glass-card border-b border-white/5 flex items-center px-6 sm:px-10 sticky top-0 z-30">
-          <h1 className="text-2xl font-bold text-white md:hidden">Nexus</h1>
+          <h1 className="text-2xl font-bold text-[var(--text-primary)] md:hidden">Nexus</h1>
           <div className="ml-auto flex items-center gap-4">
+            <button 
+              onClick={toggleTheme}
+              className="p-2 bg-[var(--border-primary)] hover:bg-brand-500/10 text-[var(--text-primary)] rounded-lg transition-all border border-[var(--border-primary)] flex items-center justify-center group"
+              title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+            >
+              {theme === 'dark' ? (
+                <Sun className="w-5 h-5 text-amber-400 group-hover:scale-110 transition-transform" />
+              ) : (
+                <Moon className="w-5 h-5 text-indigo-500 group-hover:scale-110 transition-transform" />
+              )}
+            </button>
             <button 
               onClick={() => setIsModalOpen(true)}
               className="px-4 py-2 bg-brand-600/20 text-brand-400 hover:bg-brand-600/40 rounded-lg transition-colors flex items-center gap-2 font-medium border border-brand-500/20"
