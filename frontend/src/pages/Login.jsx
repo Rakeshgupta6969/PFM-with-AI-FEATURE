@@ -28,7 +28,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-black px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[var(--bg-primary)] px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Animated Abstract Image Background */}
       <div 
         className="absolute inset-0 z-0 opacity-[0.15] pointer-events-none bg-cover bg-center animate-[pulse_8s_ease-in-out_infinite]"
@@ -49,12 +49,12 @@ const Login = () => {
         </p>
       </div>
 
-      <div className="max-w-md w-full glass-card rounded-3xl shadow-2xl overflow-hidden p-10 space-y-8 relative z-10 border border-white/5 backdrop-blur-xl">
+      <div className="max-w-md w-full glass-card rounded-3xl shadow-2xl overflow-hidden p-10 space-y-8 relative z-10 border border-[var(--border-primary)] backdrop-blur-xl">
         <div>
-          <h2 className="text-center text-3xl font-bold text-white tracking-tight">
+          <h2 className="text-center text-3xl font-bold text-[var(--text-primary)] tracking-tight">
             Welcome back
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-400">
+          <p className="mt-2 text-center text-sm text-[var(--text-secondary)]">
             Sign in to your financial command center
           </p>
         </div>
@@ -69,7 +69,7 @@ const Login = () => {
         <form className="mt-8 space-y-6" onSubmit={handleLogin}>
           <div className="space-y-5">
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">Email address</label>
+              <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">Email address</label>
               <div className="relative group">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none transition-colors group-focus-within:text-brand-400">
                   <Mail className="h-5 w-5 text-gray-500 group-focus-within:text-brand-400 transition-colors" />
@@ -86,7 +86,7 @@ const Login = () => {
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">Password</label>
+              <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">Password</label>
               <div className="relative group">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none transition-colors group-focus-within:text-brand-400">
                   <Lock className="h-5 w-5 text-gray-500 group-focus-within:text-brand-400 transition-colors" />
@@ -124,7 +124,7 @@ const Login = () => {
           </div>
         </form>
         
-        <p className="text-center text-sm text-gray-400 mt-6">
+        <p className="text-center text-sm text-[var(--text-secondary)] mt-6">
           Don't have an account?{' '}
           <Link to="/register" className="font-semibold text-brand-400 hover:text-brand-300 transition-colors">
             Create one now

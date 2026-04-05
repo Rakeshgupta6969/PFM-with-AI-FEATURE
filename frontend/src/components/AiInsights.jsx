@@ -41,40 +41,40 @@ const AiInsights = () => {
             <Brain className="w-5 h-5 text-white" />
           </div>
           <div>
-            <h3 className="text-xl font-bold text-white tracking-tight">AI Financial Lab</h3>
+            <h3 className="text-xl font-bold text-[var(--text-primary)] tracking-tight">AI Financial Lab</h3>
             <p className="text-xs text-brand-400 font-medium">Smart Pattern Recognition</p>
           </div>
         </div>
-        <div className="px-3 py-1 bg-white/5 border border-white/10 rounded-full flex items-center gap-2">
+        <div className="px-3 py-1 bg-[var(--border-primary)] border border-[var(--border-primary)] rounded-full flex items-center gap-2">
             <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_5px_#10b981]"></div>
-            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Active Engine</span>
+            <span className="text-[10px] font-bold text-[var(--text-secondary)] uppercase tracking-widest">Active Engine</span>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         {/* Comparison vs Last Month */}
-        <div className="glass-card p-5 rounded-2xl border border-white/5 hover:border-brand-500/30 transition-all group overflow-hidden relative">
+        <div className="glass-card p-5 rounded-2xl border border-[var(--border-primary)] hover:border-brand-500/30 transition-all group overflow-hidden relative">
            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
               {comparison.trend === 'increase' ? <TrendingUp className="w-16 h-16" /> : <TrendingDown className="w-16 h-16" />}
            </div>
-           <p className="text-sm font-semibold text-gray-400 mb-2">Spending Velocity</p>
+           <p className="text-sm font-semibold text-[var(--text-secondary)] mb-2">Spending Velocity</p>
            <div className="flex items-end gap-2">
-              <span className="text-3xl font-bold text-white">${comparison.totalCurrent.toLocaleString()}</span>
+              <span className="text-3xl font-bold text-[var(--text-primary)]">${comparison.totalCurrent.toLocaleString()}</span>
               <div className={`flex items-center pb-1 text-sm font-bold ${comparison.trend === 'increase' ? 'text-red-400' : 'text-emerald-400'}`}>
                 {comparison.trend === 'increase' ? <TrendingUp className="w-4 h-4 mr-1" /> : <TrendingDown className="w-4 h-4 mr-1" />}
                 {comparison.diffPercent}%
               </div>
            </div>
-           <p className="text-xs text-gray-500 mt-1 mt-2 flex items-center gap-1">
+           <p className="text-xs text-[var(--text-secondary)] mt-1 mt-2 flex items-center gap-1">
              <AlertCircle className="w-3 h-3" />
              Compared to ${comparison.totalPrev.toLocaleString()} last month
            </p>
         </div>
 
         {/* Top Spend Analysis */}
-        <div className="glass-card p-5 rounded-2xl border border-white/5">
-           <p className="text-sm font-semibold text-gray-400 mb-4 flex items-center gap-2">
+        <div className="glass-card p-5 rounded-2xl border border-[var(--border-primary)]">
+           <p className="text-sm font-semibold text-[var(--text-secondary)] mb-4 flex items-center gap-2">
              <ShoppingBag className="w-4 h-4 text-purple-400" />
              Concentration Areas
            </p>
@@ -83,12 +83,12 @@ const AiInsights = () => {
                 <div key={i} className="flex items-center justify-between">
                    <div className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-brand-500"></div>
-                      <span className="text-xs text-gray-300 font-medium">{cat.name}</span>
+                      <span className="text-xs text-[var(--text-secondary)] font-medium">{cat.name}</span>
                    </div>
-                   <span className="text-xs font-bold text-white">{cat.percentage}%</span>
+                   <span className="text-xs font-bold text-[var(--text-primary)]">{cat.percentage}%</span>
                 </div>
               ))}
-              <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden mt-1">
+              <div className="h-1 w-full bg-[var(--border-primary)] rounded-full overflow-hidden mt-1">
                  <div className="h-full bg-brand-500 rounded-full" style={{ width: `${top3[0]?.percentage || 0}%` }}></div>
               </div>
            </div>
@@ -107,8 +107,8 @@ const AiInsights = () => {
             {unusual.map((item, i) => (
               <div key={i} className="flex justify-between items-center group">
                 <div className="flex flex-col">
-                  <span className="text-sm font-bold text-gray-200">{item.name}</span>
-                  <span className="text-[10px] text-gray-500">{item.reason}</span>
+                  <span className="text-sm font-bold text-[var(--text-primary)]">{item.name}</span>
+                  <span className="text-[10px] text-[var(--text-secondary)]">{item.reason}</span>
                 </div>
                 <span className="text-sm font-bold text-red-400">${item.amount}</span>
               </div>

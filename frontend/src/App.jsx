@@ -15,9 +15,9 @@ const ProtectedRoute = ({ children }) => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-[var(--bg-primary)] text-[var(--text-primary)]">
         <div className="w-8 h-8 border-4 border-brand-500/30 border-t-brand-500 rounded-full animate-spin mb-4"></div>
-        <p className="text-gray-400 font-medium animate-pulse tracking-widest text-xs uppercase">Initializing Session</p>
+        <p className="text-[var(--text-secondary)] font-medium animate-pulse tracking-widest text-xs uppercase">Initializing Session</p>
       </div>
     );
   }

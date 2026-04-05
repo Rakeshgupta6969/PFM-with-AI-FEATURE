@@ -6,9 +6,9 @@ const COLORS = ['#F59E0B', '#8B5CF6', '#3B82F6', '#EC4899', '#06B6D4', '#10B981'
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
-      <div className="glass-card px-4 py-3 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-md">
-        <p className="text-gray-400 text-[10px] uppercase font-bold tracking-widest mb-1">{payload[0].name}</p>
-        <p className="text-white font-extrabold text-lg">${payload[0].value.toFixed(2)}</p>
+      <div className="glass-card px-4 py-3 rounded-2xl border border-[var(--border-primary)] shadow-2xl backdrop-blur-md">
+        <p className="text-[var(--text-secondary)] text-[10px] uppercase font-bold tracking-widest mb-1">{payload[0].name}</p>
+        <p className="text-[var(--text-primary)] font-extrabold text-lg">${payload[0].value.toFixed(2)}</p>
       </div>
     );
   }
@@ -58,7 +58,7 @@ const SpendingPieChart = ({ data }) => {
                 className="w-3 h-3 rounded-full shadow-[0_0_8px_rgba(0,0,0,0.5)]" 
                 style={{ backgroundColor: COLORS[index % COLORS.length] }}
               ></div>
-              <span className="text-[11px] font-bold text-gray-400 tracking-tight whitespace-nowrap">
+              <span className="text-[11px] font-bold text-[var(--text-secondary)] tracking-tight whitespace-nowrap">
                 {entry.name}
               </span>
            </div>

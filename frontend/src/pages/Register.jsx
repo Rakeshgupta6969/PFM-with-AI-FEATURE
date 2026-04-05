@@ -29,17 +29,17 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-[var(--bg-primary)] px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Dynamic Background Gradients */}
       <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-brand-600/20 blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-indigo-600/20 blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-md w-full glass-card rounded-3xl shadow-2xl overflow-hidden p-10 space-y-8 relative z-10">
         <div>
-          <h2 className="text-center text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-center text-4xl font-extrabold text-[var(--text-primary)] tracking-tight">
             Join Platform
           </h2>
-          <p className="mt-3 text-center text-sm text-gray-400">
+          <p className="mt-3 text-center text-sm text-[var(--text-secondary)]">
             Take control of your financial future
           </p>
         </div>
@@ -54,7 +54,7 @@ const Register = () => {
         <form className="mt-8 space-y-6" onSubmit={handleRegister}>
           <div className="space-y-4">
              <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+              <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">Full Name</label>
               <div className="relative group">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none transition-colors group-focus-within:text-brand-400">
                   <User className="h-5 w-5 text-gray-500 group-focus-within:text-brand-400 transition-colors" />
@@ -71,7 +71,7 @@ const Register = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">Email address</label>
+              <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">Email address</label>
               <div className="relative group">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none transition-colors group-focus-within:text-brand-400">
                   <Mail className="h-5 w-5 text-gray-500 group-focus-within:text-brand-400 transition-colors" />
@@ -88,7 +88,7 @@ const Register = () => {
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">Password</label>
+              <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">Password</label>
               <div className="relative group">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none transition-colors group-focus-within:text-brand-400">
                   <Lock className="h-5 w-5 text-gray-500 group-focus-within:text-brand-400 transition-colors" />
@@ -126,7 +126,7 @@ const Register = () => {
           </div>
         </form>
         
-        <p className="text-center text-sm text-gray-400 mt-6">
+        <p className="text-center text-sm text-[var(--text-secondary)] mt-6">
           Already have an account?{' '}
           <Link to="/login" className="font-semibold text-brand-400 hover:text-brand-300 transition-colors">
             Sign in instead

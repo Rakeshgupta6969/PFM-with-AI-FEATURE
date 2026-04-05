@@ -27,24 +27,24 @@ const BudgetWidget = ({ monthlySpent, budgetLimit, onBudgetUpdated }) => {
     <div className="mt-4">
       <div className="flex items-end justify-between mb-2">
         <div>
-          <span className="text-3xl font-bold text-white">${monthlySpent.toLocaleString()}</span>
-          <span className="text-gray-400 ml-2">/ ${budgetLimit.toLocaleString()}</span>
+          <span className="text-3xl font-bold text-[var(--text-primary)]">$ {monthlySpent.toLocaleString()}</span>
+          <span className="text-[var(--text-secondary)] ml-2">/ ${budgetLimit.toLocaleString()}</span>
         </div>
         <button 
           onClick={() => setIsEditing(!isEditing)}
-          className="p-2 bg-white/5 hover:bg-white/10 rounded-lg transition-colors"
+          className="p-2 bg-[var(--border-primary)] hover:bg-brand-500/10 rounded-lg transition-colors"
         >
-          <Settings2 className="w-4 h-4 text-gray-400" />
+          <Settings2 className="w-4 h-4 text-[var(--text-secondary)]" />
         </button>
       </div>
 
       {isEditing ? (
-        <div className="flex items-center gap-3 mb-4 mt-4 bg-white/5 p-3 rounded-xl border border-white/10">
+        <div className="flex items-center gap-3 mb-4 mt-4 bg-[var(--border-primary)] p-3 rounded-xl border border-[var(--border-primary)]">
           <input 
             type="number"
             value={newLimit}
             onChange={(e) => setNewLimit(e.target.value)}
-            className="w-full bg-black/50 border border-white/10 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-brand-500 text-sm"
+            className="w-full bg-[var(--bg-primary)] border border-[var(--border-primary)] rounded-lg px-3 py-2 text-[var(--text-primary)] focus:outline-none focus:border-brand-500 text-sm"
           />
           <button 
             onClick={handleSave}
@@ -54,7 +54,7 @@ const BudgetWidget = ({ monthlySpent, budgetLimit, onBudgetUpdated }) => {
           </button>
         </div>
       ) : (
-        <div className="w-full h-3 bg-white/10 rounded-full overflow-hidden mt-4 shadow-inner">
+        <div className="w-full h-3 bg-[var(--border-primary)] rounded-full overflow-hidden mt-4 shadow-inner">
           <div 
             className={`h-full ${progressColor} transition-all duration-1000 ease-out`}
             style={{ width: `${percentage}%` }}
@@ -62,7 +62,7 @@ const BudgetWidget = ({ monthlySpent, budgetLimit, onBudgetUpdated }) => {
         </div>
       )}
       
-      <p className="text-xs text-gray-400 mt-3 flex items-center justify-between">
+      <p className="text-xs text-[var(--text-secondary)] mt-3 flex items-center justify-between">
         <span>{percentage.toFixed(1)}% of monthly budget utilized</span>
         {percentage > 90 && <span className="text-red-400 font-medium">Critical capacity</span>}
       </p>

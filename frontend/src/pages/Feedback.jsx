@@ -69,7 +69,7 @@ const Feedback = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-gray-100 flex relative overflow-hidden">
+    <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] flex relative overflow-hidden">
       {/* Background Gradients */}
       <div className="fixed top-0 left-0 w-[50%] h-[50%] rounded-full bg-brand-600/10 blur-[150px] pointer-events-none"></div>
       <div className="fixed bottom-0 right-0 w-[50%] h-[50%] rounded-full bg-purple-600/10 blur-[150px] pointer-events-none"></div>
@@ -81,12 +81,12 @@ const Feedback = () => {
       />
 
       <main className="flex-1 flex flex-col relative z-20 h-screen overflow-hidden">
-        <header className="h-20 glass-card border-b border-white/5 flex items-center px-10 sticky top-0 z-30">
+        <header className="h-20 glass-card border-b border-[var(--border-primary)] flex items-center px-10 sticky top-0 z-30">
           <div className="flex items-center gap-3">
              <div className="p-2 bg-purple-500/10 rounded-lg">
                 <MessageCircle className="w-5 h-5 text-purple-400" />
              </div>
-             <h1 className="text-xl font-bold text-white tracking-tight">Community Feedback</h1>
+             <h1 className="text-xl font-bold text-[var(--text-primary)] tracking-tight">Community Feedback</h1>
           </div>
         </header>
 
@@ -95,8 +95,8 @@ const Feedback = () => {
             
             {/* Header Section */}
             <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-4xl font-extrabold text-white mb-4 tracking-tight">Share Your Experience</h2>
-              <p className="text-gray-400 text-lg">Your feedback helps us build a better financial tool for everyone.</p>
+              <h2 className="text-4xl font-extrabold text-[var(--text-primary)] mb-4 tracking-tight">Share Your Experience</h2>
+              <p className="text-[var(--text-secondary)] text-lg">Your feedback helps us build a better financial tool for everyone.</p>
             </div>
 
             {/* Main Grid: Form and Existed Feedback */}
@@ -109,13 +109,13 @@ const Feedback = () => {
                     <Star className="w-24 h-24 text-brand-400" />
                   </div>
                   
-                  <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                  <h3 className="text-xl font-bold text-[var(--text-primary)] mb-6 flex items-center gap-2">
                     Submit Feedback
                   </h3>
 
                   <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
-                    <div className="space-y-3 text-center p-4 bg-white/5 rounded-2xl border border-white/5">
-                      <p className="text-sm font-medium text-gray-400 uppercase tracking-widest">Rate Us</p>
+                    <div className="space-y-3 text-center p-4 bg-[var(--border-primary)] rounded-2xl border border-[var(--border-primary)]">
+                      <p className="text-sm font-medium text-[var(--text-secondary)] uppercase tracking-widest">Rate Us</p>
                       <div className="flex items-center justify-center gap-2">
                         {[1, 2, 3, 4, 5].map((star) => (
                           <button
@@ -139,14 +139,14 @@ const Feedback = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-gray-400 ml-1">Your Thoughts</label>
+                      <label className="text-sm font-medium text-[var(--text-secondary)] ml-1">Your Thoughts</label>
                       <textarea
                         required
                         rows={4}
                         value={comment}
                         onChange={(e) => setComment(e.target.value)}
                         placeholder="What did you like? What can we improve?"
-                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all resize-none"
+                        className="w-full bg-[var(--bg-primary)] border border-[var(--border-primary)] rounded-2xl px-4 py-3 text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all resize-none"
                       />
                     </div>
 
@@ -181,8 +181,8 @@ const Feedback = () => {
                   </form>
                 </div>
 
-                <div className="p-6 bg-white/2 rounded-2xl border border-white/5 text-center">
-                  <p className="text-xs text-gray-500 uppercase tracking-tighter mb-1">Authenticated As</p>
+                <div className="p-6 bg-[var(--border-primary)] rounded-2xl border border-[var(--border-primary)] text-center">
+                  <p className="text-xs text-[var(--text-secondary)] uppercase tracking-tighter mb-1">Authenticated As</p>
                   <p className="text-sm font-bold text-brand-400">{user?.name}</p>
                 </div>
               </div>
@@ -190,8 +190,8 @@ const Feedback = () => {
               {/* Existed Feedback Section */}
               <div className="lg:col-span-2 space-y-6">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-2xl font-bold text-white tracking-tight">Existed Feedback</h3>
-                  <div className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-gray-500 tracking-widest uppercase">
+                  <h3 className="text-2xl font-bold text-[var(--text-primary)] tracking-tight">Existed Feedback</h3>
+                  <div className="px-3 py-1 bg-[var(--border-primary)] border border-[var(--border-primary)] rounded-full text-[10px] font-bold text-[var(--text-secondary)] tracking-widest uppercase">
                     {feedbacks.length} Total Contributions
                   </div>
                 </div>
@@ -205,14 +205,14 @@ const Feedback = () => {
                 ) : feedbacks.length > 0 ? (
                   <div className="space-y-4">
                     {feedbacks.map((f) => (
-                      <div key={f._id} className="glass-card p-6 rounded-3xl border border-white/5 hover:border-white/10 transition-colors group animate-in fade-in slide-in-from-bottom-4 duration-500">
+                      <div key={f._id} className="glass-card p-6 rounded-3xl border border-[var(--border-primary)] hover:border-brand-500/20 transition-colors group animate-in fade-in slide-in-from-bottom-4 duration-500">
                         <div className="flex justify-between items-start mb-4">
                           <div className="flex items-center gap-3">
                             <div className="h-10 w-10 rounded-full bg-gradient-to-br from-brand-500 to-purple-600 flex items-center justify-center text-white text-xs font-bold shadow-inner">
                               {f.name.charAt(0).toUpperCase()}
                             </div>
                             <div>
-                              <p className="text-sm font-bold text-white group-hover:text-brand-400 transition-colors">{f.name}</p>
+                              <p className="text-sm font-bold text-[var(--text-primary)] group-hover:text-brand-400 transition-colors">{f.name}</p>
                               <div className="flex items-center gap-1 mt-0.5">
                                 {[...Array(5)].map((_, i) => (
                                   <Star 
@@ -223,12 +223,12 @@ const Feedback = () => {
                               </div>
                             </div>
                           </div>
-                          <div className="flex items-center text-[10px] text-gray-500 font-mono">
+                          <div className="flex items-center text-[10px] text-[var(--text-secondary)] font-mono">
                             <Calendar className="w-3 h-3 mr-1" />
                             {new Date(f.createdAt).toLocaleDateString()}
                           </div>
                         </div>
-                        <p className="text-gray-300 text-sm leading-relaxed italic">
+                        <p className="text-[var(--text-secondary)] text-sm leading-relaxed italic">
                           "{f.comment}"
                         </p>
                       </div>

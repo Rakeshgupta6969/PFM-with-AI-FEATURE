@@ -97,7 +97,7 @@ const Dashboard = () => {
 
       {/* Main Content */}
       <main className="flex-1 flex flex-col relative z-20 h-screen overflow-hidden">
-        <header className="h-20 glass-card border-b border-white/5 flex items-center px-6 sm:px-10 sticky top-0 z-30">
+        <header className="h-20 glass-card border-b border-[var(--border-primary)] flex items-center px-6 sm:px-10 sticky top-0 z-30">
           <h1 className="text-2xl font-bold text-[var(--text-primary)] md:hidden">Nexus</h1>
           <div className="ml-auto flex items-center gap-4">
             <button 
@@ -121,10 +121,10 @@ const Dashboard = () => {
             <button 
               onClick={fetchDashboardData}
               disabled={loading}
-              className="p-2 bg-white/5 hover:bg-white/10 text-white rounded-lg transition-colors disabled:opacity-50 flex items-center justify-center"
+              className="p-2 bg-[var(--border-primary)] hover:bg-brand-500/10 text-[var(--text-primary)] rounded-lg transition-colors disabled:opacity-50 flex items-center justify-center"
               title="Refresh Data"
             >
-              <RefreshCw className={`w-5 h-5 ${loading ? 'animate-spin text-brand-400' : 'text-gray-400'}`} />
+              <RefreshCw className={`w-5 h-5 ${loading ? 'animate-spin text-brand-400' : 'text-[var(--text-secondary)]'}`} />
             </button>
             <LinkBank onSuccessLink={fetchDashboardData} />
           </div>
@@ -144,22 +144,22 @@ const Dashboard = () => {
           <div className="max-w-7xl mx-auto space-y-8 pb-20">
             
             <div>
-              <h2 className="text-3xl font-extrabold text-white tracking-tight">Financial Overview</h2>
-              <p className="text-gray-400 mt-2">Track your net worth, spending, and financial health.</p>
+              <h2 className="text-3xl font-extrabold text-[var(--text-primary)] tracking-tight">Financial Overview</h2>
+              <p className="text-[var(--text-secondary)] mt-2">Track your net worth, spending, and financial health.</p>
             </div>
 
             {/* Top Stat Level */}
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
               
-              <div className="glass-card p-6 rounded-3xl border border-white/5 lg:col-span-1 flex flex-col justify-between hover:border-brand-500/30 transition-all group">
+              <div className="glass-card p-6 rounded-3xl border border-[var(--border-primary)] lg:col-span-1 flex flex-col justify-between hover:border-brand-500/30 transition-all group">
                 <div>
                     <div className="flex items-center justify-between mb-4">
-                      <p className="text-sm font-medium text-gray-400 group-hover:text-gray-300 transition-colors">Total Net Worth</p>
+                      <p className="text-sm font-medium text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors">Total Net Worth</p>
                       <div className="p-2 bg-brand-500/10 rounded-lg">
                         <DollarSign className="w-5 h-5 text-brand-400" />
                       </div>
                     </div>
-                    <p className="text-4xl font-bold text-white tracking-tight">
+                    <p className="text-4xl font-bold text-[var(--text-primary)] tracking-tight">
                       ${totalNetWorth.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                     </p>
                     <div className="mt-4 flex items-center text-sm">
@@ -167,23 +167,23 @@ const Dashboard = () => {
                         <TrendingUp className="w-3 h-3 mr-1" />
                         +2.4%
                       </span>
-                      <span className="ml-2 text-gray-500">from last month</span>
+                      <span className="ml-2 text-[var(--text-secondary)]">from last month</span>
                     </div>
                 </div>
                 
-                <div className="mt-6 pt-6 border-t border-white/10">
+                <div className="mt-6 pt-6 border-t border-[var(--border-primary)]">
                     <div className="flex items-center justify-between mb-2">
-                        <p className="text-sm font-medium text-gray-400">Connected Accounts</p>
-                        <CreditCard className="w-4 h-4 text-gray-400" />
+                        <p className="text-sm font-medium text-[var(--text-secondary)]">Connected Accounts</p>
+                        <CreditCard className="w-4 h-4 text-[var(--text-secondary)]" />
                     </div>
-                    <p className="text-2xl font-bold text-white tracking-tight">{accounts.length}</p>
+                    <p className="text-2xl font-bold text-[var(--text-primary)] tracking-tight">{accounts.length}</p>
                 </div>
               </div>
 
               {/* Dynamic Budget Widget */}
-              <div className="glass-card p-6 rounded-3xl border border-white/5 lg:col-span-2 hover:border-purple-500/30 transition-all group">
+              <div className="glass-card p-6 rounded-3xl border border-[var(--border-primary)] lg:col-span-2 hover:border-purple-500/30 transition-all group">
                 <div className="flex items-center justify-between mb-4">
-                  <p className="text-sm font-medium text-gray-400 group-hover:text-gray-300 transition-colors">Monthly Budget Tracker</p>
+                  <p className="text-sm font-medium text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors">Monthly Budget Tracker</p>
                   <div className="p-2 bg-purple-500/10 rounded-lg">
                     <ChartPie className="w-5 h-5 text-purple-400" />
                   </div>
@@ -200,28 +200,28 @@ const Dashboard = () => {
             {summaryData && (
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {/* Spending Trend */}
-                <div className="glass-card p-6 rounded-3xl border border-white/5 relative overflow-hidden group">
+                <div className="glass-card p-6 rounded-3xl border border-[var(--border-primary)] relative overflow-hidden group">
                   <div className="flex items-center justify-between mb-2">
                     <div>
-                      <h3 className="text-lg font-bold text-white tracking-tight">Spending Trend</h3>
-                      <p className="text-[12px] text-gray-500 font-medium">Past 30 days visualization</p>
+                      <h3 className="text-lg font-bold text-[var(--text-primary)] tracking-tight">Spending Trend</h3>
+                      <p className="text-[12px] text-[var(--text-secondary)] font-medium">Past 30 days visualization</p>
                     </div>
-                    <div className="p-2 bg-white/5 rounded-lg group-hover:bg-white/10 transition-colors">
-                      <ChartColumn className="text-gray-400 w-5 h-5" />
+                    <div className="p-2 bg-[var(--border-primary)] rounded-lg group-hover:bg-brand-500/10 transition-colors">
+                      <ChartColumn className="text-[var(--text-secondary)] w-5 h-5" />
                     </div>
                   </div>
                   <MonthlyBarChart data={summaryData.barChartData} />
                 </div>
 
                 {/* Expense Distribution */}
-                <div className="glass-card p-6 rounded-3xl border border-white/5 group relative overflow-hidden">
+                <div className="glass-card p-6 rounded-3xl border border-[var(--border-primary)] group relative overflow-hidden">
                   <div className="flex items-center justify-between mb-2">
                     <div>
-                      <h3 className="text-lg font-bold text-white tracking-tight">Expense Distribution</h3>
-                      <p className="text-[12px] text-gray-500 font-medium">Spending by category</p>
+                      <h3 className="text-lg font-bold text-[var(--text-primary)] tracking-tight">Expense Distribution</h3>
+                      <p className="text-[12px] text-[var(--text-secondary)] font-medium">Spending by category</p>
                     </div>
-                    <div className="p-2 bg-white/5 rounded-lg group-hover:bg-white/10 transition-colors">
-                      <ChartPie className="text-gray-400 w-5 h-5" />
+                    <div className="p-2 bg-[var(--border-primary)] rounded-lg group-hover:bg-brand-500/10 transition-colors">
+                      <ChartPie className="text-[var(--text-secondary)] w-5 h-5" />
                     </div>
                   </div>
                   <SpendingPieChart data={summaryData.pieChartData} />
@@ -231,33 +231,33 @@ const Dashboard = () => {
 
             {/* Accounts Table List */}
             {accounts.length > 0 && (
-              <div className="glass-card rounded-3xl border border-white/5 overflow-hidden mt-6">
+              <div className="glass-card rounded-3xl border border-[var(--border-primary)] overflow-hidden mt-6">
                 <button 
                   onClick={() => setIsMainAccountsOpen(!isMainAccountsOpen)}
-                  className="w-full px-6 py-5 border-b border-white/5 flex justify-between items-center hover:bg-white/5 transition-colors group"
+                  className="w-full px-6 py-5 border-b border-[var(--border-primary)] flex justify-between items-center hover:bg-brand-500/5 transition-colors group"
                 >
-                  <h3 className="text-lg font-semibold text-white">Active Connections</h3>
-                  {isMainAccountsOpen ? <ChevronDown className="w-5 h-5 text-gray-500 group-hover:text-white" /> : <ChevronRight className="w-5 h-5 text-gray-500 group-hover:text-white" />}
+                  <h3 className="text-lg font-semibold text-[var(--text-primary)]">Active Connections</h3>
+                  {isMainAccountsOpen ? <ChevronDown className="w-5 h-5 text-[var(--text-secondary)] group-hover:text-[var(--text-primary)]" /> : <ChevronRight className="w-5 h-5 text-[var(--text-secondary)] group-hover:text-[var(--text-primary)]" />}
                 </button>
                 {isMainAccountsOpen && (
-                  <div className="divide-y divide-white/5 animate-in fade-in slide-in-from-top-2 duration-300">
+                  <div className="divide-y divide-[var(--border-primary)] animate-in fade-in slide-in-from-top-2 duration-300">
                     {accounts.map(account => (
-                      <div key={account._id} className="p-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors group">
+                      <div key={account._id} className="p-6 flex items-center justify-between hover:bg-brand-500/[0.03] transition-colors group">
                         <div className="flex items-center gap-4">
                           <div className="h-12 w-12 rounded-xl bg-brand-500/10 flex items-center justify-center border border-brand-500/20">
                             <CreditCard className="h-6 w-6 text-brand-400" />
                           </div>
                           <div>
-                            <p className="font-semibold text-white text-lg">{account.name}</p>
-                            <p className="text-sm text-gray-400 capitalize">{account.subtype} • {account.officialName || 'Standard Account'}</p>
+                            <p className="font-semibold text-[var(--text-primary)] text-lg">{account.name}</p>
+                            <p className="text-sm text-[var(--text-secondary)] capitalize">{account.subtype} • {account.officialName || 'Standard Account'}</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-6">
                           <div className="text-right">
-                            <p className="text-xl font-bold text-white">
+                            <p className="text-xl font-bold text-[var(--text-primary)]">
                               ${(account.balanceCurrent || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                             </p>
-                            <p className="text-sm text-gray-400">Current Balance</p>
+                            <p className="text-sm text-[var(--text-secondary)]">Current Balance</p>
                           </div>
                           <button 
                             onClick={() => handleDeleteAccount(account._id, account.name)}
@@ -276,20 +276,20 @@ const Dashboard = () => {
 
             {/* Ledger */}
             {transactions.length > 0 && (
-               <div className="glass-card rounded-3xl border border-white/5 overflow-hidden mt-6">
-                 <div className="px-6 py-5 border-b border-white/5 flex justify-between items-center">
-                   <h3 className="text-lg font-semibold text-white">Recent Ledger Log</h3>
+               <div className="glass-card rounded-3xl border border-[var(--border-primary)] overflow-hidden mt-6">
+                 <div className="px-6 py-5 border-b border-[var(--border-primary)] flex justify-between items-center">
+                   <h3 className="text-lg font-semibold text-[var(--text-primary)]">Recent Ledger Log</h3>
                  </div>
-                 <div className="divide-y divide-white/5">
+                 <div className="divide-y divide-[var(--border-primary)]">
                    {transactions.map(txn => (
-                     <div key={txn._id} className="p-6 flex items-center justify-between hover:bg-white/[0.02] transition-colors group">
+                     <div key={txn._id} className="p-6 flex items-center justify-between hover:bg-brand-500/[0.03] transition-colors group">
                        <div className="flex items-center gap-4">
                          <div className="h-10 w-10 rounded-xl bg-purple-500/10 flex items-center justify-center border border-purple-500/20">
                            <DollarSign className="h-5 w-5 text-purple-400" />
                          </div>
                          <div>
-                           <p className="font-semibold text-white">{txn.name}</p>
-                           <p className="text-sm text-gray-400">
+                           <p className="font-semibold text-[var(--text-primary)]">{txn.name}</p>
+                           <p className="text-sm text-[var(--text-secondary)]">
                              {new Date(txn.date).toLocaleDateString()} • {txn.category[0] || 'Uncategorized'}
                            </p>
                          </div>

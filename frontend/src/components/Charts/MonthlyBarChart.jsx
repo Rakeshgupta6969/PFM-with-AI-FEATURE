@@ -4,9 +4,9 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recha
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
     return (
-      <div className="glass-card px-4 py-3 rounded-2xl border border-white/10 shadow-2xl backdrop-blur-md">
-        <p className="text-gray-400 text-[10px] uppercase font-bold tracking-widest mb-1">{label}</p>
-        <p className="text-white font-extrabold text-lg">${payload[0].value.toFixed(2)}</p>
+      <div className="glass-card px-4 py-3 rounded-2xl border border-[var(--border-primary)] shadow-2xl backdrop-blur-md">
+        <p className="text-[var(--text-secondary)] text-[10px] uppercase font-bold tracking-widest mb-1">{label}</p>
+        <p className="text-[var(--text-primary)] font-extrabold text-lg">${payload[0].value.toFixed(2)}</p>
       </div>
     );
   }
