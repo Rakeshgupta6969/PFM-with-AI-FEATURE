@@ -8,6 +8,7 @@ import AiLab from './pages/AiLab';
 import ReportIssue from './pages/ReportIssue';
 import Feedback from './pages/Feedback';
 import ContactUs from './pages/ContactUs';
+import Share from './pages/Share';
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
@@ -70,6 +71,14 @@ function App() {
         element={
           <ProtectedRoute>
             <ContactUs />
+          </ProtectedRoute>
+        } 
+      />
+      <Route 
+        path="/share" 
+        element={
+          <ProtectedRoute>
+            <Share />
           </ProtectedRoute>
         } 
       />

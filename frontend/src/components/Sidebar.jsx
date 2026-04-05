@@ -4,7 +4,7 @@ import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { 
   LogOut, Home, ChartPie, CreditCard, Settings, Wallet, 
   ChevronDown, ChevronRight, Brain, Trash2,
-  MessageSquare, CircleAlert, MessageCircle
+  MessageSquare, CircleAlert, MessageCircle, Share2
 } from 'lucide-react';
 
 const Sidebar = ({ accounts = [], isAccountsOpen, setIsAccountsOpen, onDeleteAccount }) => {
@@ -123,6 +123,10 @@ const Sidebar = ({ accounts = [], isAccountsOpen, setIsAccountsOpen, onDeleteAcc
               <Link to="/feedback" className="flex items-center py-2 text-xs font-medium text-gray-400 hover:text-white transition-colors">
                 <MessageCircle className="w-3.5 h-3.5 mr-2" />
                 Feedback
+              </Link>
+              <Link to="/share" className="flex items-center py-2 text-xs font-medium text-gray-400 hover:text-white transition-colors">
+                <Share2 className="w-3.5 h-3.5 mr-2" />
+                Share
               </Link>
             </div>
           )}
