@@ -43,7 +43,7 @@ const Sidebar = ({ accounts = [], isAccountsOpen, setIsAccountsOpen, onDeleteAcc
           }`}
         >
           <Home className={`h-5 w-5 mr-3 ${isActive('/') ? 'text-brand-400' : ''}`} />
-          <span className="font-semibold text-sm tracking-wide">Overview</span>
+          <span className="font-semibold text-sm tracking-wide">Overview/Budgets</span>
         </Link>
         
         <div className="space-y-1">
@@ -96,10 +96,11 @@ const Sidebar = ({ accounts = [], isAccountsOpen, setIsAccountsOpen, onDeleteAcc
           <span className="font-semibold text-sm tracking-wide">Ai Financial Lab</span>
         </Link>
 
-        <a href="#" className="flex items-center px-4 py-3 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-brand-500/5 rounded-xl transition-all">
+        {/* <a href="#" className="flex items-center px-4 py-3 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-brand-500/5 rounded-xl transition-all">
           <ChartPie className="h-5 w-5 mr-3" />
           <span className="font-medium text-sm tracking-wide">Budgets</span>
-        </a>
+        </a> */}
+
         <div className="space-y-1">
           <button 
             onClick={() => setIsSettingsOpen(!isSettingsOpen)}

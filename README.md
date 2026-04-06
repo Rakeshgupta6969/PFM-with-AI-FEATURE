@@ -1,6 +1,6 @@
 # Nexus Personal Finance Management (PFM) Dashboard
 
-Nexus is a premium, cutting-edge Personal Finance Management application. It empowers users to securely track their spending, manage active bank connections via Plaid, establish dynamic budgeting limits, and elegantly parse financial data through responsive data-visualizations.
+Nexus is a premium Ai powered, cutting-edge Personal Finance Management application. It empowers users to securely track their spending, manage active bank connections via Plaid, establish dynamic budgeting limits, and elegantly parse financial data through responsive data-visualizations.
 
 ## 🚀 Features
 - **Secure Authentication:** JWT-based stateless sessions and encrypted `bcryptjs` password storage.
@@ -16,6 +16,7 @@ Nexus is a premium, cutting-edge Personal Finance Management application. It emp
 - **Database**: MongoDB (Mongoose ODM).
 - **Authentication**: JWT, bcryptjs.
 - **Unit Testing**: Jest & Supertest.
+- **Ai Feature**: OpenAI API.
 
 ## 🛠️ Setup Instructions
 
