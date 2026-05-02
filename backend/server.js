@@ -9,10 +9,15 @@ import financeRoutes from './routes/financeRoutes.js';
 import aiRoutes from './routes/aiRoutes.js';
 import supportRoutes from './routes/supportRoutes.js';
 
+
 const app = express();
 
 // Middleware
-app.use(cors({ origin: process.env.CORS_ORIGIN || '*' }));
+// app.use(cors({ origin: process.env.CORS_ORIGIN || '*' }));
+app.use(cors({
+  origin: process.env.CORS_ORIGIN || "*",
+  credentials: true
+}));
 app.use(express.json());
 
 // Connect to Database
