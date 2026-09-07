@@ -20,14 +20,31 @@ const app = express();
 // // }));
 
 
+// app.use(cors({
+//   origin: [
+//     'http://localhost:5173', 
+//     'https://pfm-with-ai-feature-kdsi.vercel.app',
+//     'https://pfm-with-ai-feature-kdsi-onx6zk5q6.vercel.app'
+//   ],
+//   credentials: true
+// }));
+
+// --- UPDATED CORS CONFIGURATION ---
 app.use(cors({
-  origin: [
-    'http://localhost:5173', 
-    'https://pfm-with-ai-feature-kdsi.vercel.app',
-    'https://pfm-with-ai-feature-kdsi-onx6zk5q6.vercel.app'
-  ],
-  credentials: true
+  origin: function (origin, callback) {
+    if (!origin || origin.endsWith('.vercel.app') || origin.includes('localhost')) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+app.options('*', cors());
+// ----------------------------------
 
 
 
