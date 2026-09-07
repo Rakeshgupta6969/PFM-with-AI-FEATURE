@@ -13,17 +13,21 @@ import supportRoutes from './routes/supportRoutes.js';
 const app = express();
 
 // Middleware
-app.use(cors({ origin: process.env.CORS_ORIGIN || '*' }));
-// app.use(cors({
-//   origin: process.env.CORS_ORIGIN || "*",
-//   credentials: true
-// }));
+// app.use(cors({ origin: process.env.CORS_ORIGIN || '*' }));
+// // app.use(cors({
+// //   origin: process.env.CORS_ORIGIN || "*",
+// //   credentials: true
+// // }));
 
 
-// app.use(cors({
-//   origin: ['http://localhost:5173', 'https://pfm-with-ai-feature-bidv.vercel.app'],
-//   credentials: true
-// }));
+app.use(cors({
+  origin: [
+    'http://localhost:5173', 
+    'https://pfm-with-ai-feature-kdsi.vercel.app',
+    'https://pfm-with-ai-feature-kdsi-onx6zk5q6.vercel.app'
+  ],
+  credentials: true
+}));
 
 
 
