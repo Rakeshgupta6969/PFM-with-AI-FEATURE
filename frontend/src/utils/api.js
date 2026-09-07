@@ -7,7 +7,7 @@ import axios from 'axios';
 // });
 
 const api = axios.create({
- baseURL:"https://pfm-with-ai-feature-2.onrender.com"
+  baseURL: "https://pfm-with-ai-feature-2.onrender.com/api"
 });
 
 // const api = axios.create({
