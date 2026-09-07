@@ -1,6 +1,7 @@
 import User from '../models/User.js';
 import jwt from 'jsonwebtoken';
 
+
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.ACCESS_TOKEN_SECRET, {
     expiresIn: process.env.ACCESS_TOKEN_EXPIRY || '1d',
@@ -30,6 +31,8 @@ export const registerUser = async (req, res) => {
         email: user.email,
         token: generateToken(user._id),
       });
+
+
     } else {
       res.status(400).json({ message: 'Invalid user data' });
     }
